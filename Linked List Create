@@ -1,0 +1,49 @@
+# Data-structures-C
+#LinkedList Create
+typedef struct node{
+ int data;
+ struct node *next;
+}node;
+
+
+int main()
+{
+  int i=1,n,item;
+   node *p,*q,*head;
+  
+  printf("Enter number of nodes");
+  scanf("%d",&n);
+  printf("\nEnter head");
+  scanf("%d",&item);
+  
+  p=(struct node*)malloc(sizeof(struct node));
+  
+  p->data=item;
+  p->next=NULL;
+  
+  head=p;
+  //p=head;
+  
+  for(i=2;i<=n;i++)
+  {
+    printf("\nother elements");
+    q=(node*)malloc(sizeof(node));
+    scanf("%d",&item);
+    q->data=item;
+    q->next=NULL;
+    
+    p->next=q;
+    p=p->next;
+  }
+    
+    p=head;
+    while(p!=NULL)
+    {
+     printf("%d",p->data);
+     p=p->next;
+    
+  }
+    
+  return 0;
+}
+
